@@ -2,6 +2,7 @@ package com.nure.siop.handler;
 
 import com.nure.siop.Bot;
 import com.nure.siop.command.ParsedCommand;
+import com.nure.siop.textprocessing.NurePsychologist;
 import com.vdurmont.emoji.Emoji;
 import com.vdurmont.emoji.EmojiManager;
 import com.vdurmont.emoji.EmojiParser;
@@ -14,8 +15,8 @@ import java.util.Set;
 public class EmojiHandler extends AbstractHandler {
     private static final Logger log = Logger.getLogger(EmojiHandler.class);
 
-    public EmojiHandler(Bot bot) {
-        super(bot);
+    public EmojiHandler(Bot bot, NurePsychologist nurePsychologist) {
+        super(bot, nurePsychologist);
     }
 
     @Override
