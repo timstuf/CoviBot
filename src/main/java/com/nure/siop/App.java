@@ -11,11 +11,11 @@ public class App {
     private static final Logger log = Logger.getLogger(App.class);
     private static final int PRIORITY_FOR_SENDER = 1;
     private static final int PRIORITY_FOR_RECEIVER = 3;
-    private static final String BOT_ADMIN = "305471571";
+    private static final String BOT_ADMIN = "00";
 
     public static void main(String[] args) {
         ApiContextInitializer.init();
-        Bot test_habr_bot = new Bot("NurePsychologistBot", "1777628087:AAHGYaVvZoNX5DrMEE67D3HWIGKC4VzpVH0");
+        Bot test_habr_bot = new Bot("NurePsychologistBot", "00");
         NurePsychologist nurePsychologist = new NurePsychologist();
         MessageReciever messageReciever = new MessageReciever(test_habr_bot, nurePsychologist);
         MessageSender messageSender = new MessageSender(test_habr_bot);
