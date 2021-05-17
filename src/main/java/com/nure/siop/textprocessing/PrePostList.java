@@ -3,7 +3,7 @@ package com.nure.siop.textprocessing;
 import java.util.Vector;
 
 /**
- *  Eliza prePost list.
+ *  CoviBot prePost list.
  *  This list of pre-post entries is used to perform word transformations
  *  prior to or after other processing.
  */

@@ -3,7 +3,7 @@ package com.nure.siop.textprocessing;
 import java.lang.Math;
 
 /**
- *  Eliza decomposition rule
+ *  CoviBot decomposition rule
  */
 public class Decomp {
     /** The decomp pattern */

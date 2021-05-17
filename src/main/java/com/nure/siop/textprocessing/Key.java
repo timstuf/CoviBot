@@ -1,7 +1,7 @@
 package com.nure.siop.textprocessing;
 
 /**
- *  Eliza key.
+ *  CoviBot key.
  *  A key has the key itself, a rank, and a list of decompositon rules.
  */
 public class Key {

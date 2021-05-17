@@ -3,7 +3,7 @@ package com.nure.siop.textprocessing;
 import java.util.Vector;
 
 /**
- *  Eliza synonym list.
+ *  Covibot synonym list.
  *  Collection of all the synonym elements.
  */
 public class SynList extends Vector {

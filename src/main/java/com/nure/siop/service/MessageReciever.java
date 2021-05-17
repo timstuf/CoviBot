@@ -5,7 +5,7 @@ import com.nure.siop.command.Command;
 import com.nure.siop.command.ParsedCommand;
 import com.nure.siop.command.Parser;
 import com.nure.siop.handler.*;
-import com.nure.siop.textprocessing.NurePsychologist;
+import com.nure.siop.textprocessing.CoviBot;
 import org.apache.log4j.Logger;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.objects.Message;
@@ -16,12 +16,12 @@ public class MessageReciever implements Runnable {
     private static final Logger log = Logger.getLogger(MessageReciever.class);
     private final int WAIT_FOR_NEW_MESSAGE_DELAY = 1000;
     private Bot bot;
-    private NurePsychologist nurePsychologist;
+    private CoviBot coviBot;
     private Parser parser;
 
-    public MessageReciever(Bot bot, NurePsychologist nurePsychologist) {
+    public MessageReciever(Bot bot, CoviBot coviBot) {
         this.bot = bot;
-        this.nurePsychologist = nurePsychologist;
+        this.coviBot = coviBot;
         parser = new Parser(bot.getBotName());
     }
 
@@ -79,27 +79,27 @@ public class MessageReciever implements Runnable {
     private AbstractHandler getHandlerForCommand(Command command) {
         if (command == null) {
             log.warn("Null command accepted. This is not good scenario.");
-            return new DefaultHandler(bot, nurePsychologist);
+            return new DefaultHandler(bot, coviBot);
         }
         switch (command) {
             case START:
             case HELP:
             case ID:
             case STICKER:
-                SystemHandler systemHandler = new SystemHandler(bot, nurePsychologist);
+                SystemHandler systemHandler = new SystemHandler(bot, coviBot);
                 log.info("Handler for command[" + command.toString() + "] is: " + systemHandler);
                 return systemHandler;
             case NOTIFY:
-                NotifyHandler notifyHandler = new NotifyHandler(bot, nurePsychologist);
+                NotifyHandler notifyHandler = new NotifyHandler(bot, coviBot);
                 log.info("Handler for command[" + command.toString() + "] is: " + notifyHandler);
                 return notifyHandler;
             case TEXT_CONTAIN_EMOJI:
-                EmojiHandler emojiHandler = new EmojiHandler(bot, nurePsychologist);
+                EmojiHandler emojiHandler = new EmojiHandler(bot, coviBot);
                 log.info("Handler for command[" + command.toString() + "] is: " + emojiHandler);
                 return emojiHandler;
             default:
                 log.info("Handler for command[" + command.toString() + "] not Set. Return DefaultHandler");
-                return new DefaultHandler(bot, nurePsychologist);
+                return new DefaultHandler(bot, coviBot);
         }
     }
 }

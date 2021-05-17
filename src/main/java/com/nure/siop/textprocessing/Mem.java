@@ -1,7 +1,7 @@
 package com.nure.siop.textprocessing;
 
 /**
- *  Eliza memory class
+ *  Covibot memory class
  */
 
 public class Mem {

@@ -3,7 +3,7 @@ package com.nure.siop.textprocessing;
 import java.util.Vector;
 
 /**
- *  Eliza word list.
+ *  Covibot word list.
  */
 public class WordList extends Vector {
 

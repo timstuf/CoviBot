@@ -3,7 +3,7 @@ package com.nure.siop.handler;
 import com.nure.siop.Bot;
 import com.nure.siop.ability.Notify;
 import com.nure.siop.command.ParsedCommand;
-import com.nure.siop.textprocessing.NurePsychologist;
+import com.nure.siop.textprocessing.CoviBot;
 import org.apache.log4j.Logger;
 import org.telegram.telegrambots.api.objects.Update;
 
@@ -12,8 +12,8 @@ public class NotifyHandler extends AbstractHandler {
     private final int MILLISEC_IN_SEC = 1000;
     private String WRONG_INPUT_MESSAGE = "Wrong input. Time must be specified as an integer greater than 0";
 
-    public NotifyHandler(Bot bot, NurePsychologist nurePsychologist) {
-        super(bot, nurePsychologist);
+    public NotifyHandler(Bot bot, CoviBot coviBot) {
+        super(bot, coviBot);
     }
 
     @Override

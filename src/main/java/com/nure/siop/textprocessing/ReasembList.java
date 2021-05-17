@@ -3,7 +3,7 @@ package com.nure.siop.textprocessing;
 import java.util.Vector;
 
 /**
- *  Eliza reassembly list.
+ *  Covibot reassembly list.
  */
 public class ReasembList extends Vector {
 

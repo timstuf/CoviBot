@@ -3,7 +3,7 @@ package com.nure.siop.textprocessing;
 import java.util.Vector;
 
 /**
- *  Eliza key list.
+ *  CoviBot key list.
  *  This stores all the keys.
  */
 public class KeyList extends Vector {

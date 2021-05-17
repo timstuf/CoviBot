@@ -1,7 +1,7 @@
 package com.nure.siop.textprocessing;
 
 /**
- *  Eliza string functions.
+ *  CoviBot string functions.
  */
 public class EString {
 

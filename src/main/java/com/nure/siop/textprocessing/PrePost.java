@@ -1,7 +1,7 @@
 package com.nure.siop.textprocessing;
 
 /**
- *  Eliza pre-post entry (two words).
+ *  Covibot pre-post entry (two words).
  *  This is used to store pre transforms or post transforms.
  */
 public class PrePost {

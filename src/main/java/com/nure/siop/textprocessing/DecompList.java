@@ -3,7 +3,7 @@ package com.nure.siop.textprocessing;
 import java.util.Vector;
 
 /**
- *  Eliza decomp list.
+ *  Covibot decomp list.
  *  This stores all the decompositions of a single key.
  */
 public class DecompList extends Vector {

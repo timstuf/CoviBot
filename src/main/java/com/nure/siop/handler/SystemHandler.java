@@ -3,7 +3,7 @@ package com.nure.siop.handler;
 import com.nure.siop.Bot;
 import com.nure.siop.command.Command;
 import com.nure.siop.command.ParsedCommand;
-import com.nure.siop.textprocessing.NurePsychologist;
+import com.nure.siop.textprocessing.CoviBot;
 import org.apache.log4j.Logger;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.objects.Update;
@@ -15,8 +15,8 @@ public class SystemHandler extends AbstractHandler {
     private static final Logger log = Logger.getLogger(SystemHandler.class);
     private final String END_LINE = "\n";
 
-    public SystemHandler(Bot bot, NurePsychologist nurePsychologist) {
-        super(bot, nurePsychologist);
+    public SystemHandler(Bot bot, CoviBot coviBot) {
+        super(bot, coviBot);
     }
 
     @Override

@@ -1,36 +1,25 @@
-/**
- * Eliza
- * Author: Charles Hayden
- * http://www.chayden.net/eliza/Eliza.html
- * Modified by Andres Colubri to use it as a Processing library
- */
-
 package com.nure.siop.textprocessing;
 
 
-import java.io.*;
-import java.net.URL;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Eliza main class.
+ * Covibot main class.
  * Stores the processed script.
  * Does the input transformations.
  */
-public class NurePsychologist {
-    public NurePsychologist() {
+public class CoviBot {
+    public CoviBot() {
 
 
         readDefaultScript();
     }
 
     public void dispose() {
-        // anything in here will be called automatically when
-        // the parent applet shuts down. for instance, this might
-        // shut down a thread used by this library.
-        // note that this currently has issues, see bug #183
-        // http://dev.processing.org/bugs/show_bug.cgi?id=183
     }
 
     public boolean finished() {
@@ -161,51 +150,20 @@ public class NurePsychologist {
 
     public boolean readDefaultScript() {
         clearScript();
-		
-		/*
-    // Returns the URL of the resource file inside the location in the jar
-    // where the class file for Eliza is stored. More info about this here:
-    // http://www.javaworld.com/javaworld/javaqa/2002-11/02-qa-1122-resources.html 		
-		if (url != null)
-		{
-			String[] lines = parent.loadStrings(url.toString());
-			for (int i = 0; i < lines.length; i++) {
-				collect(lines[i]);
-			}			
-		}
-		else System.err.println("Cannot load default Eliza script!");
-		*/
-		
-		/*
-		String[] lines = parent.loadStrings("eliza.script");
-		if (lines.length == 0) {
-		  System.err.println("Cannot load default Eliza script!");
-		  return false;
-		} else {
-	    for (int i = 0; i < lines.length; i++) {
-	      collect(lines[i]);
-	    }
-	    return true;
-		}
-		*/
-
-        //return readScript("eliza.script");
-        return readScript("elizaFile.txt");
+        return readScript("coronavirus.txt");
     }
 
 
     public boolean readScript(String script) {
         clearScript();
 
-        URL url = null;
         List<String> list = new ArrayList<>();
-        String file = script;
 
 
         BufferedReader reader = null;
         String line;
         try {
-            reader = new BufferedReader(new FileReader(file));
+            reader = new BufferedReader(new FileReader(script));
             while ((line = reader.readLine()) != null) {
                 list.add(line);
             }
@@ -217,7 +175,7 @@ public class NurePsychologist {
 
         String[] lines = list.toArray(new String[0]);
         if (lines == null || lines.length == 0) {
-            System.err.println("Cannot load Eliza script!");
+            System.err.println("Cannot load Covibot script!");
             return false;
         } else {
             for (int i = 0; i < lines.length; i++) {
@@ -226,35 +184,6 @@ public class NurePsychologist {
             return true;
         }
 
-    
-		/*
-		InputStream stream = parent.openStream(script);
-		if (stream == null) {
-		    System.err.println("The script \"" + script + "\" " +
-		                       "is missing or inaccessible, make sure " +
-		                       "the URL is valid or that the file has been " +
-		                       "added to your sketch and is readable.");
-			return 1;
-		}
-		
-		BufferedReader in = new BufferedReader(new InputStreamReader(stream));
-			
-		String s;	
-	    while (true) {
-			try {
-				s = in.readLine();
-	        } catch (IOException e) {
-				System.err.println("Could not read line from script file.");
-	            return 1;
-	        }
-	        if (s == null) break;
-			collect(s);
-	        if (echoInput) System.out.println(s);
-	    }		
-		
-        if (printData) print();
-        return 0;
-        */
     }
 
     void clearScript() {
